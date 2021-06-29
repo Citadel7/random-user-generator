@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random User Generator</title>
+    <!--External CSS link-->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="app">
+        <img :class="gender" v-bind:src="picture" v-bind:alt="'${firstName} ${lastName}'" />
+        <!--OR DO THIS... v-bind:alt="firstName" if only one required-->
+        <!--OR USE SHORTHAND :alt= etc v-bind not required for alt-->
+        <h1>{{ firstName }} {{ lastName }}</h1>
+        <h3>Email: {{ email }}</h3>
+        <!--v-on: click is a click event calling a function getUser()-->
+        <button v-on:click="getUser()" :class="gender">Get Random User</button>
+    </div>
+    
+    <!--CDN Vue.js link version 3.0.5-->
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <!--External JS link-->
+    <script src="app.js"></script>
+</body>
+</html>
